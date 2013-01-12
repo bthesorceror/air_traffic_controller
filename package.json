@@ -14,5 +14,8 @@
     "events"
   ],
   "author": "Brandon Farmer (bthesorceror)",
-  "license": "BSD"
+  "license": "BSD",
+  "devDependencies": {
+    "mocha": "~1.8.1"
+  }
 }
