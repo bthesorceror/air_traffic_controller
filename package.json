@@ -1,8 +1,8 @@
 {
   "name": "air_traffic_controller",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Re-routing event emitter events for great good",
-  "main": "index.js",
+  "main": "air_traffic_controller.js",
   "scripts": {
     "test": "mocha"
   },
