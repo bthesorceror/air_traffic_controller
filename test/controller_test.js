@@ -22,6 +22,26 @@ describe("Air Traffic Controller", function() {
     done();
   });
 
+  describe("with multiple routes", function() {
+    it("should route to the first event correctly", function(done) {
+      atc.route('1', ['2', '3']);
+      emitter.on('2', function(arg) {
+        assert.equal(arg, arg_value_1);
+        done();
+      });
+      emitter.emit('1', arg_value_1);
+    });
+
+    it("should route to the second event correctly", function(done) {
+      atc.route('1', ['2', '3']);
+      emitter.on('3', function(arg) {
+        assert.equal(arg, arg_value_1);
+        done();
+      });
+      emitter.emit('1', arg_value_1);
+    });
+  });
+
   it("routes event message with no arguments correctly", function(done) {
     atc.route(from, to);
     emitter.on(to, function() {
