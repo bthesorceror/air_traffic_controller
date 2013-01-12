@@ -121,4 +121,73 @@ describe("Air Traffic Controller", function() {
 
     emitter.emit(from, arg_value_1, arg_value_2, arg_value_3);
   });
+
+  it("routes event message with 1 argument and 1 suffix argument correctly", function(done) {
+    var arg_value_1        = 'hello brandon',
+        suffix_arg_value_1 = 'there you are!';
+
+    var options = {
+      suffix_arguments: [ suffix_arg_value_1 ]
+    }
+
+    atc.route(from, to, options);
+    emitter.on(to, function(arg1, arg2) {
+      assert.equal(arg1, arg_value_1);
+      assert.equal(arg2, suffix_arg_value_1);
+      assert.equal(arguments.length, 2);
+      done();
+    });
+
+    emitter.emit(from, arg_value_1);
+  });
+
+  it("routes event message with 1 argument and multiple suffix arguments correctly", function(done) {
+    var arg_value_1        = 'hello brandon',
+        suffix_arg_value_1 = 'there you are!',
+        suffix_arg_value_2 = 'again on my own',
+        suffix_arg_value_3 = 'down that dusty';
+
+    var options = {
+      suffix_arguments: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
+    }
+
+    atc.route(from, to, options);
+    emitter.on(to, function(arg1, arg2, arg3, arg4) {
+      assert.equal(arg1, arg_value_1);
+      assert.equal(arg2, suffix_arg_value_1);
+      assert.equal(arg3, suffix_arg_value_2);
+      assert.equal(arg4, suffix_arg_value_3);
+      assert.equal(arguments.length, 4);
+      done();
+    });
+
+    emitter.emit(from, arg_value_1);
+  });
+
+  it("routes event message with multiple arguments and multiple suffix arguments correctly", function(done) {
+    var arg_value_1        = 'hello brandon',
+        arg_value_2        = 'hello tater',
+        arg_value_3        = 'hello steve',
+        suffix_arg_value_1 = 'there you are!',
+        suffix_arg_value_2 = 'again on my own',
+        suffix_arg_value_3 = 'down that dusty';
+
+    var options = {
+      suffix_arguments: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
+    }
+
+    atc.route(from, to, options);
+    emitter.on(to, function(arg1, arg2, arg3, arg4, arg5, arg6) {
+      assert.equal(arg1, arg_value_1);
+      assert.equal(arg2, arg_value_2);
+      assert.equal(arg3, arg_value_3);
+      assert.equal(arg4, suffix_arg_value_1);
+      assert.equal(arg5, suffix_arg_value_2);
+      assert.equal(arg6, suffix_arg_value_3);
+      assert.equal(arguments.length, 6);
+      done();
+    });
+
+    emitter.emit(from, arg_value_1, arg_value_2, arg_value_3);
+  });
 });
