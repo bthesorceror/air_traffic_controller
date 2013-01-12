@@ -14,7 +14,7 @@ Example:
 
   }
 
-  atc.route('1'
+  atc.route('1', '2')
 
   emitter.on('2', handleThis);
 
