@@ -17,8 +17,8 @@ function createController(emitter) {
     route: function(from, to, options) {
       options = options || {};
 
-      var prefix = options['prefix_arguments'] || [],
-          suffix = options['suffix_arguments'] || [];
+      var prefix = options['prefix'] || [],
+          suffix = options['suffix'] || [];
 
       emitter.on(from, function() {
         var input = arguments

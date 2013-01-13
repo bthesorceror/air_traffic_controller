@@ -78,7 +78,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with 1 argument and 1 prefix argument correctly", function(done) {
     var options = {
-      prefix_arguments: [ prefix_arg_value_1 ]
+      prefix: [ prefix_arg_value_1 ]
     }
 
     atc.route(from, to, options);
@@ -94,7 +94,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with 1 argument and multiple prefix arguments correctly", function(done) {
     var options = {
-      prefix_arguments: [ prefix_arg_value_1, prefix_arg_value_2, prefix_arg_value_3 ]
+      prefix: [ prefix_arg_value_1, prefix_arg_value_2, prefix_arg_value_3 ]
     }
 
     atc.route(from, to, options);
@@ -112,7 +112,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with multiple arguments and multiple prefix arguments correctly", function(done) {
     var options = {
-      prefix_arguments: [ prefix_arg_value_1, prefix_arg_value_2, prefix_arg_value_3 ]
+      prefix: [ prefix_arg_value_1, prefix_arg_value_2, prefix_arg_value_3 ]
     }
 
     atc.route(from, to, options);
@@ -132,7 +132,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with 1 argument and 1 suffix argument correctly", function(done) {
     var options = {
-      suffix_arguments: [ suffix_arg_value_1 ]
+      suffix: [ suffix_arg_value_1 ]
     }
 
     atc.route(from, to, options);
@@ -148,7 +148,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with 1 argument and multiple suffix arguments correctly", function(done) {
     var options = {
-      suffix_arguments: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
+      suffix: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
     }
 
     atc.route(from, to, options);
@@ -166,7 +166,7 @@ describe("Air Traffic Controller", function() {
 
   it("routes event message with multiple arguments and multiple suffix arguments correctly", function(done) {
     var options = {
-      suffix_arguments: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
+      suffix: [ suffix_arg_value_1, suffix_arg_value_2, suffix_arg_value_3 ]
     }
 
     atc.route(from, to, options);
