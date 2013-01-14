@@ -1,6 +1,8 @@
 air_traffic_controller
 ======================
 
+[![Build Status](https://travis-ci.org/bthesorceror/air_traffic_controller.png)](https://travis-ci.org/bthesorceror/air_traffic_controller)
+
 Re routing event emitter events for great good
 
 Example:
