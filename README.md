@@ -3,9 +3,9 @@ air_traffic_controller
 
 [![Build Status](https://travis-ci.org/bthesorceror/air_traffic_controller.png)](https://travis-ci.org/bthesorceror/air_traffic_controller)
 
-Re routing event emitter events for great good
+Re-routing EventEmitter events for great good.
 
-Example:
+Example 1:
 
 ```javascript
   var EventEmitter = require('events').EventEmitter,
@@ -23,7 +23,7 @@ Example:
   emitter.emit('1', 'Brandon', 'Farmer');
 ```
 
-handleThis will be called and receive the arguments 'Brandon' and 'Farmer'
+handleThis will be called and receive the arguments 'Brandon' and 'Farmer'.
 
 Example 2:
 
@@ -48,7 +48,7 @@ Example 2:
   emitter.emit('1', 'Brandon', 'Farmer');
 ```
 
-handleThis and handleThat will be called and receive the arguments 'Brandon' and 'Farmer'
+handleThis and handleThat will be called and receive the arguments 'Brandon' and 'Farmer'.
 
 Example 3:
 
@@ -73,6 +73,6 @@ Example 3:
   emitter.emit('1', 'Brandon', 'Farmer');
 ```
 
-handleThis will be called and receive the arguments 'prefix', 'Brandon', 'Farmer', and 'suffix' in that order
+handleThis will be called and receive the arguments 'prefix', 'Brandon', 'Farmer', and 'suffix' (in that order).
 
-I am planning on using this module to connect other event based modules and for fanning out events
+I am planning to use this module to connect to other event-based modules and to fan out events.
